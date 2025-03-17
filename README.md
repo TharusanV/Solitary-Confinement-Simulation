@@ -1,6 +1,3 @@
-# SolitaryConfinementSimulation
- Python - Solitary Confinement Simulation
-
 <div align="center">
     <h3>Solitary Confinement Simulation</h3>
     <p>Python - Solitary Confinement ABM (Agent Based Modeling)</p>
