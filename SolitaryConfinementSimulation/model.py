@@ -1,25 +1,19 @@
-#pip install -U mesa
-#pip install -U mesa[rec]
-
+#pip install mesa==2.4
 
 from mesa import Agent, Model
 from mesa.time import RandomActivation
 from mesa.space import MultiGrid
 from mesa.datacollection import DataCollector
 from mesa.batchrunner import BatchRunner
-import random
 
 
 class PlayerAgent(Agent):
     def __init__(self, unique_id, model, isJackOfHeart):
         super().__init__(unique_id, model)
         
-        self.startingX = startingX
-        self.startingY = startingY
-
-        self.occupation = random.choice(["Gambler", "Politician", "Teacher", "Police Officer"])
-        self.suit = random.choice(["Hearts", "Diamonds", "Clubs", "Spades"])
-        self.strategy = random.choice(["Truthful", "Deceptive", "Random"])
+        self.occupation = self.random.choice(["Gambler", "Politician", "Teacher", "Police Officer"])
+        self.suit = self.random.choice(["Hearts", "Diamonds", "Clubs", "Spades"])
+        self.strategy = self.random.choice(["Truthful", "Deceptive", "Random"])
         self.suitGuess = ""
         self.trustLevelsHashMap = {}
         self.sleepDeprived = 0
@@ -31,7 +25,7 @@ class PlayerAgent(Agent):
 
 
     
-class JackOfHeartsModel(mesa.Model):
+class JackOfHeartsModel(Model):
     """ Our Model acts as the home for our agents """
     def __init__(self, numOfAgents, width, height):
         self.numOfAgents = numOfAgents
